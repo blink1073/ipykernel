@@ -53,7 +53,7 @@ test = [
     "flaky",
     "ipyparallel",
     "pre-commit",
-    "pytest-asyncio",
+    "pytest-asyncio==0.23.4a0",
     "pytest-timeout"
 ]
 cov = [

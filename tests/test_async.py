@@ -1,5 +1,6 @@
 """Test async/await integration"""
 
+import sys
 import time
 
 import pytest
@@ -8,6 +9,9 @@ from .test_message_spec import validate_message
 from .utils import TIMEOUT, execute, flush_channels, start_new_kernel
 
 KC = KM = None
+
+if sys.platform.startswith("win"):
+    pytest.skip("skipping async interrupt tests on windows", allow_module_level=True)
 
 
 def setup_function():
